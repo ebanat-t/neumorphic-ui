@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Neumorphic UI</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <!--ライブラリ読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="fastclick.js"></script>
+
+    <body class="preload">
+        
+        
+
+
+
+
+
+        <div class="app-container">
+            
+            <div class="big-text-container">
+
+                <span class="big-text" id="bigText">-</span>
+
+
+            </div>
+            
+            <div class="button-container">
+
+                <input type="radio" name="alphabets" id="A" onclick="changeText(this)">
+                <label for="A" class="radio-label">A</label>
+
+                <input type="radio" name="alphabets" id="B" onclick="changeText(this)">
+                <label for="B" class="radio-label">B</label>
+
+                <input type="radio" name="alphabets" id="C" onclick="changeText(this)">
+                <label for="C" class="radio-label">C</label>
+
+                <input type="radio" name="alphabets" id="D" onclick="changeText(this)">
+                <label for="D" class="radio-label">D</label>
+
+                <input type="radio" name="alphabets" id="E" onclick="changeText(this)">
+                <label for="E" class="radio-label">E</label>
+
+                
+            </div>
+
+        </div>
+        
+
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+    <script>
+    
+
+    function changeText(element) {
+
+        $("body").removeClass("preload");
+
+        var bigText = document.getElementById('bigText');
+
+        var id_value = element.id;
+        bigText.textContent = id_value;
+        console.log(id_value);
+
+
+
+
+    }
+
+    
+    $(window).on('load' , function() {
+        //$("body").removeClass("preload");
+        console.log("loaded");
+    });
+
+
+    $(function(){
+        FastClick.attach(document.body);
+    });
+
+
+    
+    
+    </script>
+
+
+
+
+</html>

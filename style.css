@@ -1,0 +1,281 @@
+body {
+    background-color: var(--themeColor);
+
+}
+
+.preload * {
+    animation: none !important;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+.big-text-container {
+
+    margin: 0em 2em 3em 2em;
+
+    /*
+    display: block;
+    width: 570px;
+    background-color: #404040;
+    border: solid 15px #efefef;
+    border-radius: 50px;
+
+    box-shadow: 8px 8px 16px var(--darkShadow),
+                -8px -8px 16px var(--lightShadow);
+    */
+}
+
+.big-text {
+    display:block;
+    text-align: center;
+    font-size: 15em;
+    color: var(--planeText);
+
+
+
+    /*font-size: 10em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--themeColor);*/
+
+}
+
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 600px;
+    height: 170px;
+    border-radius: 50px;
+    margin: 2em;
+
+    background-color: var(--themeColor);
+    box-shadow: 8px 8px 16px var(--darkShadow),
+                -8px -8px 16px var(--lightShadow);
+
+
+}
+
+@media screen and (max-width: 650px) {
+    
+    .button-container {
+        width: 95%;
+    }
+    
+}
+
+
+
+input[type=radio] {
+    display: none;
+}
+
+
+.radio-label {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+
+    background-color: var(--themeColor);
+    box-shadow: 8px 8px 16px var(--darkShadow),
+                -8px -8px 16px var(--lightShadow);
+    
+    font-size: 1.2rem;
+    color: var(--buttonText);
+    font-family: Avenir;
+    text-align: center;
+
+    animation-name: buttonPullin;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+
+    
+
+}
+
+.radio-label::before {
+    position: absolute;
+    display: block;
+    content: "";
+    background: var(--lampOff);
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+    top: -40px;
+
+    box-shadow: 0 0 16px var(--lampOff),
+                inset 1px 1px 3px var(--lampOff_DS),
+                inset -1px -1px 3px var(--lampOff_LS);
+
+
+    transition: ease-in-out 0.25s;
+}
+
+input[type=radio]:checked +label {
+    box-shadow: inset 8px 8px 16px var(--darkShadow),
+                inset -8px -8px 16px var(--lightShadow);
+
+    /*background-color: #00ffff;*/
+    font-size: 1.1rem;
+    color: var(--planeText);
+
+    animation-name: buttonExclude;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+}
+
+input[type=radio]:checked +label::before {
+    background: var(--lampOn);
+    box-shadow: 0 0 16px var(--lampOn),
+                inset 1px 1px 3px var(--lampOn_DS),
+                inset -1px -1px 3px var(--lampOn_LS);
+
+    transition: ease-in-out 0.25s;
+}
+
+
+@keyframes buttonExclude {
+    0% {
+        font-size: 1.2rem;
+        box-shadow:  8px 8px 16px var(--darkShadow),
+                     -8px -8px 16px var(--lightShadow);
+    }
+
+    50% {
+        box-shadow:  0px 0px 0px var(--darkShadow),
+                     0px 0px 0px var(--lightShadow);
+    }
+
+    50.001% {
+        box-shadow:  inset 0px 0px 0px var(--darkShadow),
+                     inset 0px 0px 0px var(--lightShadow);
+    }
+
+    100% {
+        font-size: 1.1rem;
+        box-shadow:  inset 8px 8px 16px var(--darkShadow),
+                     inset -8px -8px 16px var(--lightShadow);
+    }
+}
+
+@keyframes buttonPullin {
+    0% {
+        font-size: 1.2rem;
+        box-shadow:  inset 8px 8px 16px var(--darkShadow),
+                     inset -8px -8px 16px var(--lightShadow);
+    }
+
+    50% {
+        box-shadow:  inset 0px 0px 0px var(--darkShadow),
+                     inset 0px 0px 0px var(--lightShadow);
+    }
+
+    50.001% {
+        box-shadow:  0px 0px 0px var(--darkShadow),
+                     0px 0px 0px var(--lightShadow);
+    }
+
+    100% {
+        font-size: 1.1rem;
+        box-shadow:  8px 8px 16px var(--darkShadow),
+                     -8px -8px 16px var(--lightShadow);
+    }
+}
+
+
+:root {
+
+    --themeColor: #efefef;
+    --lightShadow: #ffffff;
+    --darkShadow: #cfcfcf;
+    --buttonText: #404040;
+    --planeText: #303030;
+
+    --lampOff: #e3d0c7;
+    --lampOff_LS: #fcf6de;
+    --lampOff_DS: #c9c5b1;
+    --lampOn: #ffce51; 
+    --lampOn_LS: #ffd978;
+    --lampOn_DS: #e5b949;
+
+
+
+
+}
+
+
+
+
+@media (prefers-color-scheme: no-prefernce) {
+    :root {
+
+        --themeColor: #efefef;
+        --lightShadow: #ffffff;
+        --darkShadow: #cfcfcf;
+        --buttonText: #404040;
+        --planeText: #303030;
+        
+    
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+
+        --themeColor: #efefef;
+        --lightShadow: #ffffff;
+        --darkShadow: #cfcfcf;
+        --buttonText: #404040;
+        --planeText: #303030;
+    
+    
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --themeColor: #1a1a1a;
+        --lightShadow: #202020;
+        --darkShadow: #101010;
+        --buttonText: #909090;
+        --planeText: #a0a0a0;
+
+        --lampOff: #2f2c20;
+        --lampOff_LS: #3b3728;
+        --lampOff_DS: #211f17;
+        --lampOn: #c9a240; 
+        --lampOn_LS: #e3b748;
+        --lampOn_DS: #b08e38;
+
+    
+    
+    }
+}
+
+
+
+
+
+
