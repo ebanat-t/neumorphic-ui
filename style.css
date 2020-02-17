@@ -3,9 +3,30 @@ body {
 
 }
 
-.preload * {
-    animation: none !important;
+@media screen and (max-width: 450px) {
+    
+    body {
+        zoom: 50%
+    }
+    
 }
+
+@media screen and (max-height: 450px) {
+    
+    body {
+        zoom: 50%
+    }
+    
+}
+
+
+
+
+
+.preload * {
+    /*animation: none !important;*/
+}
+
 
 .app-container {
     display: flex;
@@ -66,13 +87,13 @@ body {
     margin: 2em;
 
     background-color: var(--themeColor);
-    box-shadow: 8px 8px 16px var(--darkShadow),
-                -8px -8px 16px var(--lightShadow);
+    box-shadow: 5px 5px 10px var(--darkShadow),
+                -5px -5px 10px var(--lightShadow);
 
 
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 400px) {
     
     .button-container {
         width: 95%;
@@ -98,8 +119,8 @@ input[type=radio] {
     border-radius: 15px;
 
     background-color: var(--themeColor);
-    box-shadow: 8px 8px 16px var(--darkShadow),
-                -8px -8px 16px var(--lightShadow);
+    box-shadow: 5px 5px 10px var(--darkShadow),
+                -5px -5px 10px var(--lightShadow);
     
     font-size: 1.2rem;
     color: var(--buttonText);
@@ -107,7 +128,7 @@ input[type=radio] {
     text-align: center;
 
     animation-name: buttonPullin;
-    animation-duration: 0.2s;
+    animation-duration: 0.15s;
     animation-timing-function: ease-in-out;
 
     
@@ -133,15 +154,15 @@ input[type=radio] {
 }
 
 input[type=radio]:checked +label {
-    box-shadow: inset 8px 8px 16px var(--darkShadow),
-                inset -8px -8px 16px var(--lightShadow);
+    box-shadow: inset 5px 5px 16px var(--darkShadow),
+                inset -5px -5px 16px var(--lightShadow);
 
     /*background-color: #00ffff;*/
     font-size: 1.1rem;
     color: var(--planeText);
 
     animation-name: buttonExclude;
-    animation-duration: 0.2s;
+    animation-duration: 0.15s;
     animation-timing-function: ease-in-out;
 }
 
@@ -158,8 +179,8 @@ input[type=radio]:checked +label::before {
 @keyframes buttonExclude {
     0% {
         font-size: 1.2rem;
-        box-shadow:  8px 8px 16px var(--darkShadow),
-                     -8px -8px 16px var(--lightShadow);
+        box-shadow:  5px 5px 10px var(--darkShadow),
+                     -5px -5px 10px var(--lightShadow);
     }
 
     50% {
@@ -174,16 +195,16 @@ input[type=radio]:checked +label::before {
 
     100% {
         font-size: 1.1rem;
-        box-shadow:  inset 8px 8px 16px var(--darkShadow),
-                     inset -8px -8px 16px var(--lightShadow);
+        box-shadow:  inset 5px 5px 10px var(--darkShadow),
+                     inset -5px -5px 10px var(--lightShadow);
     }
 }
 
 @keyframes buttonPullin {
     0% {
         font-size: 1.2rem;
-        box-shadow:  inset 8px 8px 16px var(--darkShadow),
-                     inset -8px -8px 16px var(--lightShadow);
+        box-shadow:  inset 5px 5px 10px var(--darkShadow),
+                     inset -5px -5px 10px var(--lightShadow);
     }
 
     50% {
@@ -198,8 +219,8 @@ input[type=radio]:checked +label::before {
 
     100% {
         font-size: 1.1rem;
-        box-shadow:  8px 8px 16px var(--darkShadow),
-                     -8px -8px 16px var(--lightShadow);
+        box-shadow:  5px 5px 10px var(--darkShadow),
+                     -5px -5px 10px var(--lightShadow);
     }
 }
 
@@ -257,8 +278,8 @@ input[type=radio]:checked +label::before {
     :root {
 
         --themeColor: #1a1a1a;
-        --lightShadow: #202020;
-        --darkShadow: #101010;
+        --lightShadow: #2a2a2a;
+        --darkShadow: #0a0a0a;
         --buttonText: #909090;
         --planeText: #a0a0a0;
 
